@@ -13,8 +13,32 @@ const images = [
   },
 ];
 
+
 const ImageList = document.querySelector('.gallery');
-// console.dir(ImageList)
-const galleryItems = images.map((gallery) => `<li class = 'gallery-Item'><img src='${gallery.url}' alt='${gallery.alt}' ></img></li>`).join('');
-ImageList.insertAdjacentHTML("afterbegin", galleryItems)
-console.dir(ImageList);
+ImageList.classList.add('gallery-container');
+
+const galleryItems = images
+  .map((image) => `<li class="gallery-item"><img class="gallery-image" src="${image.url}" alt="${image.alt}" ></li>`
+  ).join('');
+
+ImageList.insertAdjacentHTML('afterbegin', galleryItems);
+console.dir(galleryItems);
+const styles = `
+  .gallery-container {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    
+    }
+
+    .gallery-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  
+  }`;
+
+const styleElement = document.createElement('style');
+styleElement.textContent = styles;
+
+document.head.append(styleElement);
