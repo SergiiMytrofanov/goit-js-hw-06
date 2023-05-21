@@ -22,7 +22,7 @@ const galleryItems = images
   ).join('');
 
 ImageList.insertAdjacentHTML('afterbegin', galleryItems);
-console.dir(galleryItems);
+// console.dir(galleryItems);
 const styles = `
   .gallery-container {
     display: flex;
