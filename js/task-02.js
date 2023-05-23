@@ -7,7 +7,8 @@ const ingredients = [
   'Condiments',
 ];
 
-const list = document.querySelector('#ingredients')
+const list = document.querySelector('#ingredients');
+const liBlock = document.createDocumentFragment();
 
 ingredients.forEach((ingredient) => {
   const ingredientItem = document.createElement('li');
@@ -18,5 +19,5 @@ ingredients.forEach((ingredient) => {
   list.append(ingredientItem);
 }
 );
-
+list.append(liBlock);
 
